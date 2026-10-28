@@ -1,14 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDb from "./config/db.js";
-import router from "./routes/auth.route.js";
+
+
 dotenv.config();
 
 const port = process.env.PORT;
 
 const app = express();
 app.use(express.json());
-app.use("/",router);
+
 
 
 app.get("/", (req,res)=> {
@@ -16,6 +17,6 @@ app.get("/", (req,res)=> {
 })
 
 app.listen(port, () => {
-    console.log(`auth service is running on port ${port}`);
+    console.log(`chat is running on port ${port}`);
     connectDb()
 })
